@@ -14,6 +14,7 @@ import AboutScreen from "./app/screens/AboutScreen";
 import SearchScreen from "./app/screens/SearchScreen";
 //import ViewImageScreen from "./app/screens/ViewImageScreen";
 import colors from "./app/config/colors";
+import AppNavigator from "./app/AppNavigator";
 
 function HomeScreen({ navigation }) {
   return (
@@ -34,14 +35,7 @@ function DetailsScreen() {
 const Stack = createStackNavigator();
 
 function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={WelcomeScreen} />
-        <Stack.Screen name="Details" component={ViewImageScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+  return <NavigationContainer>{<AppNavigator />}</NavigationContainer>;
 }
 
 function ViewImageScreen(props) {

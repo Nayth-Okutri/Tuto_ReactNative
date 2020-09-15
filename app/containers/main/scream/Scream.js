@@ -11,7 +11,8 @@ import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { Card, ListItem, Button, Icon } from "react-native-elements";
 import LottieView from "lottie-react-native";
-
+import IconFontAwe from "react-native-vector-icons/FontAwesome";
+import { Input } from "react-native-elements";
 class Scream extends React.Component {
   render() {
     dayjs.extend(relativeTime);
@@ -56,6 +57,11 @@ class Scream extends React.Component {
           <Text>{likeCount} Likes</Text>
           <LottieView source={require("./296-react-logo.json")} autoPlay loop />
         </View>
+
+        <Input
+          placeholder="Comment"
+          leftIcon={{ type: "font-awesome", name: "comment" }}
+        />
       </Card>
     );
   }

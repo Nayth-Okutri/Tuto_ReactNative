@@ -15,6 +15,8 @@ import SearchScreen from "./app/screens/SearchScreen";
 //import ViewImageScreen from "./app/screens/ViewImageScreen";
 import colors from "./app/config/colors";
 import AppNavigator from "./app/AppNavigator";
+import store from "./app/redux/store";
+import { Provider } from "react-redux";
 
 function HomeScreen({ navigation }) {
   return (
@@ -35,7 +37,13 @@ function DetailsScreen() {
 const Stack = createStackNavigator();
 
 function App() {
-  return <NavigationContainer>{<AppNavigator />}</NavigationContainer>;
+  return (
+    <Provider store={store}>
+      <NavigationContainer>
+        <AppNavigator />
+      </NavigationContainer>
+    </Provider>
+  );
 }
 
 function ViewImageScreen(props) {
